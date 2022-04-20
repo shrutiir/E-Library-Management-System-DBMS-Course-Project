@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    
+    <title>User</title>
+
+<style media="screen">
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+
+.jumbotron{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.jumbotron h1{
+  text-align: center;
+  font-family: 'georgia';
+}
+
+
+</style>
+  </head>
+  <body>
+    {% include "library/navbarstudent.html" %}
+    <br>
+    <br>
+    <center><h3 style=" margin-bottom: 0px; background-color: #BDD4E7; font-family: 'Georgia'; font-size: 22px; color: darkblue" class = 'alert alert-success'>Hello, {{user.first_name}}!</h3></center>
+    <div class="jumbotron"   style="margin-bottom: 0px;">
+    <h1 class="display-4" style="font-family:'georgia'">Welcome to E-Library</h1>
+    <p class="lead" style="font-family:'Georgia'">Browse available books and borrow what you like. Explore your library!
+    </p>
+    <hr class="my-4">
+    <p style="font-family:'Georgia'"> to see the books you've borrowed?</p>
+    <div class="options" style="text-align:center">
+      <a href="viewissuedbookbystudent" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" 
+      style="font-family: 'georgia'; border-color: darkblue; background-color: #0000a8">View Book(s) Issued</a>
+      <br><br>
+      <a href="issuebook" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+       style="background-color: #0000a8; border-color: darkblue; font-family: 'georgia'; font-size: 16px;">Issue New Book
+      </a><br><br>
+    </div>
+
+
+    </div>
+   
+
+
+    {% include "library/footer.html" %}
+  </body>
+</html>

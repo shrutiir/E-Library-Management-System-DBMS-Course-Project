@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Issued Books</title>
+
+
+<style media="screen">
+table.redTable {
+border: 2px solid #A40808;
+background-color: #EEE7DB;
+width: 200%;
+text-align: center;
+border-collapse: collapse;
+}
+table.redTable td, table.redTable th {
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+}
+table.redTable tbody td {
+font-size: 13px;
+font-family: 'georgia';
+}
+table.redTable tr:nth-child(even) {
+background: #F5C8BF;
+}
+table.redTable thead {
+background: #A40808;
+}
+table.redTable thead th {
+font-size: 19px;
+font-weight: bold;
+font-family: 'georgia';
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #A40808;
+}
+table.redTable thead th:first-child {
+border-left: none;
+}
+
+table.redTable tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+font-family: 'georgia';
+background: #A40808;
+}
+table.redTable tfoot td {
+font-size: 13px;
+font-family: 'georgia';
+}
+table.redTable tfoot .links {
+text-align: right;
+}
+table.redTable tfoot .links a{
+display: inline-block;
+background: #FFFFFF;
+color: #A40808;
+padding: 2px 8px;
+border-radius: 5px;
+}
+</style>
+
+  </head>
+  <body>
+  {% include "library/navbarstudent.html" %}<br><br>
+  <h3 class="p-3 mb-2 bg-light text-dark" 
+    style = 'font-size: 35px; font-family: "georgia" ;text-align:center;'>Books Issued To You</h3>
+
+<div class="row">
+
+  <div class="col-lg-6" style="padding-right:0px;">
+    {% if li%}
+    <table class="redTable" style="height: 200px">
+  <thead>
+  <tr>
+  <th>Name</th>
+  <th>E-Mail</th>
+  <th>Book Name</th>
+  <th>Book Author</th>
+  <th>E-book</th>
+  <th>Issue Date</th>
+  <th>Expiry Date</th>
+  <th>Extension Payment</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+  <td colspan="8">
+  <div class="links"></div>
+  </td>
+  </tr>
+  </tfoot>
+  <tbody>
+    {% for t1, t2 in li %}
+<tr>
+  <td>  {{t1.0}}</td>
+  <td>  {{t1.1}}</td>
+  <td>  {{t1.2}}</td>
+  <td>  {{t1.3}}</td>
+  <td><a href="{{t1.4}}">{{t1.4}}</a></td>
+  <td>  {{t2.0}}</td>
+  <td>  {{t2.1}}</td>
+  <td>  {{t2.2}}</td>
+
+</tr>
+
+    {% endfor %}
+  </tbody>
+  </table>
+
+    
+    {%else%}
+    <h1 style="font-family: 'georgia'"> No book Issued to you</h1>
+    {%endif%}
+
+</div></div>
+
+
+
+
+
+
+<br><br><br><br><br><br>
+<br><br><br>
+  {% include "library/footer.html" %}
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>SEARCH</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+    .bs-example{
+        margin: 0px;
+
+    }
+.navbar-brand{
+  font-size: 20px;
+  font-family: 'georgia';
+
+}
+body
+{
+  color: black;
+}
+
+
+</style>
+</head>
+<body>
+{% include "library/navbarstudent.html" %}
+<br>
+<br>
+  <center>
+  {% if searched %}
+<br><br>
+    <h1 style="font-family: 'georgia'">You Searched For {{searched}}</h1>
+    <br>
+        {% for book in books %}
+              <h1 style="font-family: 'georgia'">{{ book}}</h1><br/>
+              <h2 style="font-family: 'georgia'">{{ book.author }}</h2><br/>
+              <h3 style="font-family: 'georgia'">{{ book.category }}</h3><br/>
+              <a href="issuebook" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+                style="background-color: #0000a8; border-color: darkblue; font-family: 'georgia'; font-size: 16px;">Issue New Book
+              </a><br><br>
+            {% empty %}
+               <br><br>
+               <h1 style="font-family: 'georgia'; font-size: 35px">Book not found! Please try another search.</h1>
+  
+        {% endfor %}
+    
+    
+
+
+  {% else %}
+    <h1>Hey! You Forgot To Search</h1>
+
+  {% endif %}
+
+  
+
+  
+  </center>
+
+
+</body>
+</html>

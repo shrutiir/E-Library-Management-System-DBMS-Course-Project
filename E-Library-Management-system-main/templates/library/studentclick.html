@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>User</title>
+    <style media="screen">
+    .jumbotron{
+      margin-bottom: 0px;
+    }
+    .jumbotron h1{
+      text-align: center;
+    }
+    </style>
+
+  </head>
+  <body>
+      {% include "library/navbar.html" %}
+<br><br>
+      <div class="jumbotron">
+        <h1 class="display-4" style="font-family: 'georgia'">Hello, User!</h1>
+        <p class="lead" style="font-family: 'georgia'">Welcome to E-Library Management System.</p>
+        <hr class="my-4">
+        <p style="font-family: 'georgia'">Please Login to browse, borrow or return your books and gain access to additional features</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="studentsignup" role="button" style="font-size: 15px; 
+          font-family: 'georgia'; border-color: darkblue; background-color: #0000a8">SignUp</a>
+          <a class="btn btn-primary btn-lg" href="studentlogin" role="button" style="font-size: 15px; 
+          font-family: 'georgia'; border-color: darkblue; background-color: #0000a8">Login</a>
+        </p>
+      </div>
+
+
+      {% include "library/footer.html" %}
+  </body>
+</html>
